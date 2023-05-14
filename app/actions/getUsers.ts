@@ -1,7 +1,7 @@
 import prisma from "@/app/libs/prismadb";
 import getSession from "./getSession";
 
-const getCurrentUser = async () => {
+const getUsers = async () => {
   try {
     const session = await getSession();
 
@@ -9,18 +9,21 @@ const getCurrentUser = async () => {
       return null;
     }
 
-    const currentUser = await prisma.user.findUnique({
+    const users = await prisma.user.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
       where: {
-        email: session.user.email as string,
+        NOT: {
+          email: session.user.email,
+        },
       },
     });
 
-    if (!currentUser) return null;
-
-    return currentUser;
+    return users;
   } catch (error: any) {
-    return null;
+    return [];
   }
 };
 
-export default getCurrentUser;
+export default getUsers;
