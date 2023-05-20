@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
 interface IParams {
-  conversationId: string;
+  conversationId?: string;
 }
 
-export async function POST({ params }: { params: IParams }) {
+export async function POST(request: Request, { params }: { params: IParams }) {
   try {
     const currentUser = await getCurrentUser();
 
