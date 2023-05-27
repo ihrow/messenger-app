@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { FC } from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 interface InputProps {
