@@ -50,7 +50,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
-      .post("/api/setting", data)
+      .post("/api/settings", data)
       .then(() => {
         router.refresh();
         onClose();
@@ -83,13 +83,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               <div>
                 <label
                   htmlFor="photo"
-                  className="
-                    block 
-                    text-sm 
-                    font-medium 
-                    leading-6 
-                    text-gray-900
-                  "
+                  className="block text-sm font-medium leading-6 text-gray-900"
                 >
                   Photo
                 </label>
@@ -104,7 +98,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                   <CldUploadButton
                     options={{ maxFiles: 1 }}
                     onUpload={handleUpload}
-                    uploadPreset="pgc9ehd5"
+                    uploadPreset="xkjlhkbe"
                   >
                     <Button disabled={isLoading} secondary type="button">
                       Change
@@ -116,15 +110,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
           </div>
         </div>
 
-        <div
-          className="
-            mt-6 
-            flex 
-            items-center 
-            justify-end 
-            gap-x-6
-          "
-        >
+        <div className="mt-6 flex items-center justify-end gap-x-6">
           <Button disabled={isLoading} secondary onClick={onClose}>
             Cancel
           </Button>
