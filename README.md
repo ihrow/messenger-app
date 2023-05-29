@@ -1,3 +1,9 @@
-## In progress 
+# Messenger Clone
 
-# Messenger Clone: Next.js 13, React, Tailwind, Prisma, MongoDB, NextAuth, Pusher
+![Login Screen](https://i.imgur.com/dmvWmCJ.png)
+![Conversations](https://i.imgur.com/YyZmWeo.png)
+
+### To be implemented:
+- Real-time messages with Pusher
+- Creating and messaging in group conversations.
+
